@@ -32,6 +32,16 @@
 		<servlet-name>book</servlet-name>
 		<url-pattern>/book.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>front</servlet-name>
+		<servlet-class>mvc.exam3.FrontController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>front</servlet-name>
+		<url-pattern>/front.do</url-pattern>
+	</servlet-mapping>
 
 	<resource-ref>
 		<res-ref-name>jdbc/mySqlDB</res-ref-name>
