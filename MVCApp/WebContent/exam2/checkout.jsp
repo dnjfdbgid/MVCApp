@@ -3,7 +3,7 @@
 <%@ page contentType="text/html; charset=EUC-KR" %>
 <%
 	Vector bookList = (Vector)session.getAttribute("cart");
-	
+	int sum=0;
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,16 +23,19 @@
 		<th>수량</th>
 	</tr>
 	<%for(int i=0; i<bookList.size();i++){
-		BookDto dto = (BookDto)bookList.get(i);%>
+			BookDto dto = (BookDto)bookList.get(i);%>
 	<tr>
 		<td><%=dto.getTitle()%></td>
 		<td><%=dto.getAuthor()%></td>
 		<td><%=dto.getPrice()%></td>
 		<td><%=dto.getQuantity()%></td>
 	</tr>
-	<%}%>
+	<%
+			sum += dto.getPrice() * dto.getQuantity();
+		}
+	%>
 </table>
 <hr/>
-<b>전체 구입 액수 : </b>
+<b>전체 구입 액수 : <%=sum%></b>
 </body>
 </html>

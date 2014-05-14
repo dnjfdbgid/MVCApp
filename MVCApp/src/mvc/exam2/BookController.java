@@ -47,7 +47,7 @@ public class BookController extends HttpServlet {
 			session.setAttribute("cart", bookList);
 			RequestDispatcher view = req
 					.getRequestDispatcher("/exam2/bookShop.jsp");
-			view.forward(req, resp);
+			view.forward(req, resp); 
 		}
 
 	}
