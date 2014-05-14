@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ImplicitObjectApp</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>depart</servlet-name>
+		<servlet-class>mvc.exam1.DepartServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>depart</servlet-name>
+		<url-pattern>/depart.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>book</servlet-name>
+		<servlet-class>mvc.exam2.BookController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>book</servlet-name>
+		<url-pattern>/book.do</url-pattern>
+	</servlet-mapping>
+
+	<resource-ref>
+		<res-ref-name>jdbc/mySqlDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+</web-app>
